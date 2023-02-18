@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% block content %}
+
+    <br><br><br>
+    <br><br>
+        <div class="box center">
+            <br><br>
+            <form>
+                <h2>Student Result</h2>
+
+                <br>
+                <h3>Enter Your Id:</h3>
+                
+                <input placeholder="ex: 012345" id="name" name="q">
+
+                <br><br>
+                <button type="submit" onclick="submit()">Show</button>
+            </form>
+
+            <br><br
+
+            <div class="result">
+                {% for student in students %}
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Id</th>
+                            <th>Subjects</th>
+                            <th>Test One</th>
+                            <th>Test Two</th>
+                            <th>Mid</th>
+                            <th>Test Three</th>
+                            <th>Final</th>
+                        </tr>
+                        <tr>
+                            <td>{{ student.name }}</td>
+                            <td>{{ student.no }}</td>
+                            <td>{{ student.test_subjects }}</td>
+                            <td>{{ student.test_one }}</td>
+                            <td>{{ student.test_two }}</td>
+                            <td>{{ student.mid }}</td>
+                            <td>{{ student.test_three }}</td>
+                            <td>{{ student.final }}</td>
+                        </tr>
+                    </table>
+                    <!--<h4>{{student.name}} {{student.no}}</h4>
+                    <h5>Test One Result</h5>
+                    <h4 class="result">{{student.test_subjects}}</h4>
+                    <h5>Test Two Result</h5>
+                    <h4 class="result">{{student.test_two}}</h4>
+                    <h5>Mid Result</h5>
+                    <h4 class="result">{{student.mid_exam}}</h4>
+                    <h5>Test Three Result</h5>
+                    <h4 class="result">{{student.test_three}}</h4>
+                    <h5>Final Result</h5>
+                    <h4 class="result">{{student.final_exam}}</h4>-->
+                {% endfor %}
+            </div>  
+        </div>
+
+        <style>
+            .center{
+                display: block;
+                margin: auto;
+                text-align: center;
+            }
+
+            .box{
+                width: 615px;
+                height: 900px;
+                margin-top: -90px;
+                border-radius: 15px;
+                animation-name: appear;
+                animation-duration: 3s;
+                border: solid 5px white;
+                box-shadow: 7px 7px skyblue;
+                background-color: rgba(255, 209, 123, 0.878);
+            }
+
+            body{
+                background-color: deepskyblue;
+            }
+
+            h2{
+                margin: 0;
+                color: gray;
+                font-size: 30px;
+                margin-left: -235;
+                font-family: arial;
+            }
+
+            h2:hover{
+                color: DodgerBlue;
+            }
+
+            input{
+                width: 320px;
+                height: 35px;
+                opacity: 40%;
+                margin-left: -20;
+                border-radius: 20px;
+                border-color: lightgray;
+                animation-name: appear;
+            }
+
+            input:hover{
+                opacity: 100%;
+                transition: opacity 2s ease-in 0s both;
+            }
+
+            p{
+                font-size: 13px;
+                font-family: arial;
+                margin-right: -185;
+                color: dodgerblue;
+            }
+
+            button{
+                height: 40px;
+                width: 300px;
+                border-color: white;
+                border-radius: 50px;
+                box-shadow: 1px 5px lightgray;
+                background-color: DarkTurquoise;
+            }
+
+            h3{
+                color: dodgerblue;
+                font-family: arial;
+                text-shadow: 0px 1px;
+            }
+
+            h4{
+                color: dodgerblue;
+                font-family: arial;
+            }
+
+            h5{
+                color: dodgerblue;
+                font-family: arial;
+            }
+
+            table, th, td {
+                width: 600px;
+                border: 1px solid;
+            }
+
+            @keyframes appear{
+                from {opacity: 0%;}
+                to {opacity: 100%;}
+            }
+        </style>
+
+
+
+
+
+
+
+        <script>
+
+
+
+
+            
+        </script>
+    {% endblock %}
+    
+</body>
+</html>
